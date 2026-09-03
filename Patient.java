@@ -42,5 +42,6 @@ public class Patient {
         System.out.println("Age              : " + age);
         System.out.println("Contact Number   : " + contactNumber);
         System.out.println("Medical Condition: " + medicalCondition);
+        System.out.println("");
     }
 }
