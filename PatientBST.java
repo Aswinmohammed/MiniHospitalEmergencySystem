@@ -9,7 +9,7 @@ public class PatientBST {
     // INSERT PATIENT
     // --------------
 
-    public void insert(Patient patient) {
+    public boolean insert(Patient patient) {
 
         PatientNode newNode = new PatientNode(patient);
 
@@ -17,9 +17,7 @@ public class PatientBST {
 
             root = newNode;
 
-            System.out.println("Patient inserted successfully.");
-
-            return;
+            return true;
         }
 
         PatientNode current = root;
@@ -46,11 +44,7 @@ public class PatientBST {
 
             } else {
 
-                System.out.println(
-                        "Patient ID already exists."
-                );
-
-                return;
+                return false;
             }
         }
 
@@ -66,9 +60,7 @@ public class PatientBST {
         }
 
 
-        System.out.println(
-                "Patient inserted successfully."
-        );
+        return true;
     }
 
     // SEARCH PATIENT
@@ -139,15 +131,11 @@ public class PatientBST {
     // DELETE PATIENT
     // --------------
 
-    public void delete(int patientId) {
+    public boolean delete(int patientId) {
 
         if (search(patientId) == null) {
 
-            System.out.println(
-                    "Patient not found."
-            );
-
-            return;
+                return false;
         }
 
 
@@ -156,7 +144,7 @@ public class PatientBST {
                 patientId
         );
 
-        System.out.println("Patient deleted successfully.");
+        return true;
     }
 
     private PatientNode deleteNode(
